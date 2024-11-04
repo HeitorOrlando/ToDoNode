@@ -4,12 +4,15 @@
   "description": "Projeto para aprender nodejs mvc",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "author": "Heitor Orlando",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.21.1",
+    "nodemon": "^3.1.7",
     "todonode": "file:"
   }
 }
