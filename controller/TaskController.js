@@ -13,7 +13,7 @@ const createTask = async (req, res) => {
   const task = req.body;
 
   if(!task.task) {
-    console.log("Error")
+    console.log("Tentativa de task sem nome feita!")
     return res.redirect("/");
   }
 

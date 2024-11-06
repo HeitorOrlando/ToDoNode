@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
+const connection = require("../secrets");
+
 const dbConnection = () => {
   mongoose
-    .connect(
-      "mongodb+srv://root:@todolist.o26eq.mongodb.net/?retryWrites=true&w=majority&appName=todolist"
-    )
+    .connect(connection)
     .then(() => {
       console.log("MongoDB conectado!");
     })

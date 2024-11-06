@@ -9,10 +9,12 @@
   </head>
   <body>
     <form action="/create" method="post">
-      <div class="m-3">
-        <input type="text" class="form-control" name="task" id="task" placeholder="Insira um task">
-        <button type="submit" class="btn btn-primary mt-3">Adicionar</button>
-      </div>
+      <fieldset class="mb-3 bg-black">
+        <div class="m-3 bg-black">
+          <input type="text" class="form-control text-center" name="task" id="task" placeholder="Insira uma task">
+          <button type="submit" class="btn btn-primary mt-3">Adicionar</button>
+        </div>
+      </fieldset>
     </form>
 
     <% if (taskList < 1){ %>
@@ -21,15 +23,22 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">task</th>
-              <th scope="col">data</th>
+              <th scope="col">#ID</th>
+              <th scope="col">Task</th>
+              <th scope="col">Data</th>
+              <th scope="col">Opções</th>
             </tr>
           </thead>
           <tbody>
             <% taskList.forEach((task) => { %>
               <tr>
+                <td><%= task.id %></td>
                 <td><%= task.task %></td>
                 <td><%= task.date.toLocaleDateString('pt-BR') %></td>
+                <td>
+                  <button class="btn btn-outline-danger">Deletar</button>
+                  <button class="btn btn-outline-warning">Editar</button>
+                </td>
               </tr>
               <% }) }%>
           </tbody>
